@@ -1,14 +1,11 @@
 library(RcppArmadillo)
 
-Rcpp::sourceCpp("src/SimpLinCpp.cpp")
-
 simpLinR <- function(x, y) {
   if (!is.numeric(x) | !is.numeric(y) | length(x) != length(y)) {
     stop("x and y must be numeric vectors of the same length")
   }
   
   a = SimpLinCpp(x, y)
-  print(a)
 }
 
 # x <- rnorm(100)
