@@ -3,33 +3,28 @@
 \alias{SimpLin}
 \docType{package}
 \title{
-\packageTitle{SimpLin}
+SimpLin
 }
 \description{
-\packageDescription{SimpLin}
+A RcppArmadillo package to do Simple Linear Regression
 }
 \details{
 
-The DESCRIPTION file:
-\packageDESCRIPTION{SimpLin}
-\packageIndices{SimpLin}
-~~ An overview of how to use the package, including the most important functions ~~
+Performs Simple linear regression. Two functions available: SimpLinCpp and SimpLinR. Returns the coefficients, standard errors, 95 percent CI for both coefficients, residuals and predicted values in a list. SimpLinR(x, y) must be passed two numeric vectors x and y. 
 }
 \author{
-\packageAuthor{SimpLin}
+Jony Karki
+}
 
-Maintainer: \packageMaintainer{SimpLin}
-}
-\references{
-~~ Literature or other references for background information ~~
-}
-~~ Optionally other standard keywords, one per line, from file KEYWORDS in the R documentation ~~
-~~ directory ~~
-\keyword{ package }
-\seealso{
-~~ Optional links to other man pages, e.g. ~~
-~~ \code{\link[<pkg>:<pkg>-package]{<pkg>}} ~~
-}
 \examples{
-~~ simple examples of the most important functions ~~
+x <- rnorm(100)
+y <- 1 - x + rnorm(100)
+
+mod <- SimpLinR(x, y)
+
+# get the coefficients
+mod$coefficients
+
+# to see all the other available attributes
+attributes(mod)
 }
