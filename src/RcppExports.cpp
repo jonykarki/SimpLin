@@ -12,7 +12,7 @@ Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
 // SimpLinCpp
-arma::vec SimpLinCpp(arma::vec x, arma::vec y);
+Rcpp::List SimpLinCpp(arma::vec x, arma::vec y);
 RcppExport SEXP _SimpLin_SimpLinCpp(SEXP xSEXP, SEXP ySEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;

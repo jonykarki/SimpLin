@@ -1,16 +1,17 @@
 library(RcppArmadillo)
 
-simpLinR <- function(x, y) {
+SimpLinR <- function(x, y) {
   if (!is.numeric(x) | !is.numeric(y) | length(x) != length(y)) {
     stop("x and y must be numeric vectors of the same length")
   }
   
-  a = SimpLinCpp(x, y)
+  SimpLinCpp(x, y)
 }
 
-# x <- rnorm(100)
-# y <- 1 - 1 * x + rnorm(100)
-# simpLinR(x, y)
+# set.seed(1)
+# x <- rnorm(10)
+# y <- 1 - 1 * x + rnorm(10)
+# attributes(simpLinR(x, y))
 # 
 # mod <- lm(y ~ x)
 # attributes(lm(y ~ x))
